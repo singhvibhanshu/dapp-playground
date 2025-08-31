@@ -18,9 +18,15 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      hi there
-    </>
+    <ConnectionProvider endpoint={endpoint}>
+            <WalletProvider wallets={wallets} autoConnect>
+                <WalletModalProvider>
+                  <>
+                    hi there
+                  </>
+                </WalletModalProvider>
+            </WalletProvider>
+      </ConnectionProvider>
   )
 }
 
